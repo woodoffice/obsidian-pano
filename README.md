@@ -51,7 +51,7 @@ The suggested previous/next bindings overlap Obsidian's default back/forward nav
 
 Copy `main.js`, `manifest.json` and `styles.css` into `<vault configuration folder>/plugins/canvas-scenes/`, then enable Pano in Obsidian's Community plugins settings. Preserve any existing `data.json` when updating. The usual configuration folder is `.obsidian`, but Obsidian supports other names.
 
-Download the three plugin assets from the [latest GitHub release](https://github.com/woodoffice/obsidian-pano/releases/latest). Community directory submission is in progress.
+Pano is available in the [Obsidian Community directory](https://community.obsidian.md/plugins/canvas-scenes). For manual installation, download the three plugin assets from the [latest GitHub release](https://github.com/woodoffice/obsidian-pano/releases/latest).
 
 ## Data and privacy
 

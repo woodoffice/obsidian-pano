@@ -1,6 +1,6 @@
 # Pano release readiness
 
-Candidate: **0.1.2** · reviewed locally on **16 November 2026**.
+Published: **0.1.2** · verified on **16 November 2026**.
 
 ## Local verification
 
@@ -20,14 +20,19 @@ Candidate: **0.1.2** · reviewed locally on **16 November 2026**.
 
 GitHub checks and release workflows are prepared under `.github/workflows/`, with pinned action commits. A tag-triggered release workflow verifies the candidate, checks that the tag matches the manifest, attests all three release assets, and uploads `main.js`, `manifest.json` and `styles.css` individually. Current runs are available in [GitHub Actions](https://github.com/woodoffice/obsidian-pano/actions).
 
-## Remaining steps before claiming directory readiness
+## Publication verification
 
-1. Publish the source repository: [woodoffice/obsidian-pano](https://github.com/woodoffice/obsidian-pano).
-2. Run the prepared checks on GitHub, create the matching release and confirm that its assets and attestations are available.
-3. Add the entry in the Obsidian developer dashboard and run **Review branch** against the exact candidate commit/tag.
-4. Resolve every hosted error and warning, then confirm the hosted scorecard and release version before publishing the directory entry.
+The public source is [woodoffice/obsidian-pano](https://github.com/woodoffice/obsidian-pano), with release commit `7566aefdbe3b95d5836feea7ae14b59927ebdd7d`.
 
-The local checks do **not** establish that the directory scorecard is green. Confirm the GitHub release and hosted review results for the exact candidate before publishing the directory entry.
+- [GitHub checks](https://github.com/woodoffice/obsidian-pano/actions/runs/43915853824) passed on the release tag.
+- The [release workflow](https://github.com/woodoffice/obsidian-pano/actions/runs/43915853838) passed verification, a clean reproducible build and artifact attestation.
+- [Release 0.1.2](https://github.com/woodoffice/obsidian-pano/releases/tag/0.1.2) contains all three individual plugin assets. Their SHA-256 digests match the locally verified files.
+- GitHub recognizes the repository license as MIT.
+- [Pano's public directory listing](https://community.obsidian.md/plugins/canvas-scenes) is published under WOOD OFFICE. Its 0.1.2 scorecard reports **Health: Excellent** and **Review: Passed**, with six passed checks and no reported errors or warnings.
+- The hosted checks passed artifact attestations for `main.js` and `styles.css`, network patterns, dependencies, obfuscation, and a byte-for-byte reproduction of the release `main.js`.
+- The scorecard includes one disclosure: **Malware scan not available**. A passed review does not establish a malware-scan result.
+
+These hosted results were observed on the public scorecard after publication. Future releases must be checked independently; local checks alone do not establish the directory review result.
 
 Current submission uses the Community directory dashboard, rather than an old pull request to `community-plugins.json`. The manifest on the default branch and the matching GitHub release must agree. See [Submit your plugin](https://docs.obsidian.md/Plugins/Releasing/Submit%20your%20plugin) and the [directory FAQ](https://docs.obsidian.md/community-directory/faq).
 
@@ -46,7 +51,7 @@ These local rules follow the [Obsidian developer policies](https://docs.obsidian
 
 Canvas camera controls have no public plugin API. Their guarded adapter is essential to the plugin and verified against Obsidian 1.15.1. The requested filtered-Hotkeys button uses the host's internal `openTabById`/`setQuery` route, guarded by capability checks and a manual-instructions fallback. Native setting definitions and persistence use public APIs.
 
-An internal method is not automatically a policy violation, but local lint does not establish how the hosted scanner will assess it. Inspect the hosted result before claiming a clean review. Do not hide or suppress a finding to obtain a score.
+An internal method is not automatically a policy violation. The hosted 0.1.2 review passed with these guarded adapters present. Continue to inspect future hosted results, and do not hide or suppress a finding to obtain a score.
 
 The existing plugin ID remains `canvas-scenes`; the display name is Pano. Keeping that ID preserves the review vault's saved scenes and custom hotkeys. The chosen macOS previous/next review bindings overlap core back/forward shortcuts; no bindings are imposed on other vaults.
 
