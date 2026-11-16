@@ -1,0 +1,9 @@
+{
+  "id": "canvas-scenes",
+  "name": "Pano",
+  "version": "0.1.2",
+  "minAppVersion": "1.15.1",
+  "description": "Save named views of your canvas and move between them smoothly without losing your place.",
+  "author": "WOOD OFFICE",
+  "isDesktopOnly": true
+}
